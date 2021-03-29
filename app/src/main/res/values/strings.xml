@@ -3,4 +3,10 @@
     <string name="welcome_message">Welcome to Brainblast!</string>
     <string name="brainblast">Brainblast!</string>
     <string name="click_to_login">Click to Login</string>
+    <string name="play">Play</string>
+    <string name="logo_for_app">Logo for app</string>
+    <string name="profile_redirect">Profile redirect</string>
+    <string name="leaderboard_redirect">Leaderboard redirect</string>
+    <string name="question">Question</string>
+    <string name="_10">10</string>
 </resources>
