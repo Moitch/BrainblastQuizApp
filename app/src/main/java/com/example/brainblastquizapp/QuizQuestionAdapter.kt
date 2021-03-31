@@ -1,3 +1,11 @@
+/*
+Not working right now, was trying to do something similar to the category screen
+but realized that it is not grabbing a question from the database. Couldn't figure out
+how to grab a singular entry from the database.
+
+If you know how to do this, could possibly send me the documentation for it?
+I was having trouble finding it so it would be greatly appreciated.
+ */
 package com.example.brainblastquizapp
 
 import android.content.Context

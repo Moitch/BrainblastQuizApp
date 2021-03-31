@@ -1,3 +1,6 @@
+/*
+Copy pasted from documentation
+ */
 package com.example.brainblastquizapp
 
 import android.app.Activity

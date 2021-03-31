@@ -15,24 +15,24 @@ class PlayCategoriesActivity : AppCompatActivity(), CategoriesGridAdapter.Catego
         super.onCreate(savedInstanceState)
         binding = ActivityPlayCategoriesBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        // Connects the data to the recycler view.
         val model : CategoryListViewModel by viewModels()
         model.getCategories().observe(this, Observer<List<Category>> { categories ->
             var recyclerAdapter = CategoriesGridAdapter(this, categories, this)
             binding.categoriesRecyclerView.adapter = recyclerAdapter
         })
-
+//        Send user to the profile screen
         binding.profileButton.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
-
+//        Send user to the leaderboard screen
         binding.leaderboardButton.setOnClickListener {
             val intent = Intent(this, LeaderboardActivity::class.java)
             startActivity(intent)
         }
     }
-
+//        When the category is selected, send user to the quiz question screen while passing through the name of the category.
     override fun categorySelected(category: Category) {
         val intent = Intent(this, QuizQuestionActivity::class.java)
         intent.putExtra("name", category.name)

@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        Send user to the sign in screen
         binding.loginButton.setOnClickListener{
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
