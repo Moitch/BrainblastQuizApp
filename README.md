@@ -18,6 +18,7 @@ After the user picks the quiz they want, it starts the quiz. They are multiple c
 If the user chooses correctly the button turns green and the rest are greyed out. If the user chooses incorrectly it turns red and the correct one turns green.
 
 After the quiz it displays how many the user got correct out of the # of questions and adds the two statistics(questions answered and correct answers) to the users stats.
+
 -------------------------------------------------------------------------------------------------------------------------------
 There are currently 5 views.
 
