@@ -9,4 +9,11 @@
     <string name="leaderboard_redirect">Leaderboard redirect</string>
     <string name="question">Question</string>
     <string name="_10">10</string>
+    <string name="welcome_back">Welcome back %1$s!</string>
+    <string name="categories">Categories</string>
+    <string name="username">%1$s</string>
+    <string name="date_created">%1$s</string>
+    <string name="display_name">Display name:</string>
+    <string name="account_created">Account created:</string>
+    <string name="answer">%1$s</string>
 </resources>

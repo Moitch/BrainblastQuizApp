@@ -4,27 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlayCategoriesActivity"
-    android:background="@color/purple_200">
+    android:background="@color/purple_200"
+    tools:context=".PlayCategoriesActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoriesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoriesTextView"
+        app:layout_constraintTop_toBottomOf="@+id/answerTextView"
         app:layout_constraintVertical_bias="0.116"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2" />
 
     <TextView
-        android:id="@+id/categoriesTextView"
+        android:id="@+id/answerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Categories"
+        android:shadowColor="@color/black"
+        android:text="@string/categories"
+        android:textColor="@color/purple_700"
+        android:textSize="@dimen/category_text_size"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -43,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/profileButton"
         android:layout_width="92dp"
         android:layout_height="86dp"
         android:layout_marginStart="40dp"
@@ -52,13 +56,13 @@
         android:contentDescription="@string/profile_redirect"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintEnd_toStartOf="@+id/leaderboardButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:srcCompat="@drawable/header_account_image_line_512" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/leaderboardButton"
         android:layout_width="92dp"
         android:layout_height="86dp"
         android:layout_marginEnd="40dp"
@@ -86,7 +90,7 @@
         android:textColor="@color/orange_500"
         android:textSize="@dimen/logo_font_size"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

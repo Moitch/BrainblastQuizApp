@@ -2,4 +2,8 @@
 <resources>
     <dimen name="logo_font_size">32sp</dimen>
     <dimen name="category_text_size">24sp</dimen>
+    <dimen name="profile_padding">50sp</dimen>
+    <dimen name="profile_text_size">18sp</dimen>
+    <dimen name="profile_row_padding">20dp</dimen>
+    <dimen name="answer_padding">20dp</dimen>
 </resources>

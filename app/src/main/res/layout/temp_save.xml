@@ -28,6 +28,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/answersRecyclerView"
+        android:layout_width="272dp"
+        android:layout_height="306dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="@color/purple_500"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answerTextView"
+        app:layout_constraintVertical_bias="0.442" />
+
     <TextView
         android:id="@+id/answerTextView"
         android:layout_width="259dp"
@@ -44,43 +57,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.181" />
 
-    <Button
-        android:id="@+id/answer1Button"
+    <TextView
+        android:id="@+id/timerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/answer"
-        app:layout_constraintBottom_toTopOf="@+id/answer2Button"
+        android:text="@string/_10"
+        android:textColor="@color/purple_700"
+        android:textSize="@dimen/logo_font_size"
+        app:layout_constraintBottom_toTopOf="@+id/categoriesRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/answerTextView"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/answer4Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="180dp"
-        android:text="@string/answer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/answer2Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/answer"
-        app:layout_constraintBottom_toTopOf="@+id/answer3Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/answer3Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/answer"
-        app:layout_constraintBottom_toTopOf="@+id/answer4Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintVertical_bias="0.382" />
 </androidx.constraintlayout.widget.ConstraintLayout>

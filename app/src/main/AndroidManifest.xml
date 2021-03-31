@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BrainblastQuizApp">
-        <activity android:name=".QuizQuestionActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".LeaderboardActivity" />
+        <activity android:name=".QuizQuestionActivity" />
         <activity android:name=".PlayCategoriesActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".MainActivity">

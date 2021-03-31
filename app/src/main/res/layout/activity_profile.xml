@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    tools:context=".ProfileActivity">
+
+    <TextView
+        android:id="@+id/profileUsernameTextView"
+        android:layout_width="241dp"
+        android:layout_height="58dp"
+        android:background="@color/purple_500"
+        android:paddingTop="10dp"
+        android:text="@string/username"
+        android:textAlignment="center"
+        android:textColor="@color/orange_500"
+        android:textSize="@dimen/logo_font_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/profileTable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLogoTextView6" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/leaderboardButton"
+        android:layout_width="92dp"
+        android:layout_height="86dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/purple_500"
+        android:contentDescription="@string/leaderboard_redirect"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toEndOf="@+id/profileButton2"
+        app:srcCompat="@drawable/leaderboard" />
+
+    <ImageButton
+        android:id="@+id/profileButton2"
+        android:layout_width="92dp"
+        android:layout_height="86dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/purple_500"
+        android:contentDescription="@string/profile_redirect"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/header_account_image_line_512" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="84dp"
+        android:layout_height="81dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/circlebutton"
+        android:text="@string/play"
+        android:textColor="@color/orange_500"
+        android:textStyle="bold"
+        app:backgroundTint="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/topLogoTextView6"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="@color/purple_500"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingTop="20dp"
+        android:shadowColor="@color/black"
+        android:text="@string/brainblast"
+        android:textAlignment="center"
+        android:textColor="@color/orange_500"
+        android:textSize="@dimen/logo_font_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TableLayout
+        android:id="@+id/profileTable"
+        android:layout_width="344dp"
+        android:layout_height="332dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="@color/purple_500"
+        android:padding="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLogoTextView6"
+        app:layout_constraintVertical_bias="0.798">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="@string/display_name"
+                android:textSize="@dimen/profile_text_size"
+                android:textColor="@color/orange_500"/>
+
+            <TextView
+                android:id="@+id/displayNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/profile_padding"
+                android:text="@string/username"
+                android:textSize="@dimen/profile_text_size"
+                android:textColor="@color/orange_500"/>
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="@dimen/profile_row_padding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="@string/account_created"
+                android:textSize="@dimen/profile_text_size"
+                android:textColor="@color/orange_500"/>
+
+            <TextView
+                android:id="@+id/dateJoinedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/profile_padding"
+                android:text="@string/date_created"
+                android:textSize="@dimen/profile_text_size"
+                android:textColor="@color/orange_500"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

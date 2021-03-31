@@ -1,6 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.BrainblastQuizApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.BrainblastQuizApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Custom font for buttons and textViews-->
+        <item name="android:textViewStyle">@style/CustomTextViewStyle</item>
+        <item name="buttonStyle">@style/CustomButtonStyle</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +15,13 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="CustomTextViewStyle" parent="android:Widget.TextView">
+        <item name="fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
+    <style name="CustomButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="fontFamily">sans-serif-condensed-medium</item>
     </style>
 </resources>
