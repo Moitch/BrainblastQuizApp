@@ -17,9 +17,8 @@
         android:textSize="@dimen/logo_font_size"
         app:layout_constraintBottom_toTopOf="@+id/categoriesRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quizNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/questionNumberTextView"
         app:layout_constraintVertical_bias="0.382" />
 
     <TextView
@@ -44,9 +43,10 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/quizNameTextView"
+        android:id="@+id/questionNumberTextView"
         android:layout_width="316dp"
         android:layout_height="46dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/roundedbutton"
         android:backgroundTint="@color/purple_500"
         android:text="@string/question"
@@ -56,13 +56,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintTop_toBottomOf="@+id/topLogoTextView4"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/questionTextView"
-        android:layout_width="313dp"
+        android:layout_width="0dp"
         android:layout_height="82dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/roundedbutton"
         android:backgroundTint="@color/purple_500"
         android:text="Fetching Data..."
@@ -71,17 +74,18 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintTop_toBottomOf="@+id/timerTextView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonC"
         android:layout_width="313dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/answer"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/buttonD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -90,8 +94,9 @@
         android:id="@+id/buttonA"
         android:layout_width="313dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/answer"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/buttonB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -100,8 +105,9 @@
         android:id="@+id/buttonB"
         android:layout_width="313dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/answer"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/buttonC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -110,33 +116,39 @@
         android:id="@+id/buttonD"
         android:layout_width="313dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/answer"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quizNameTextView"
-        app:layout_constraintVertical_bias="0.698" />
+        app:layout_constraintTop_toBottomOf="@+id/questionNumberTextView"
+        app:layout_constraintVertical_bias="0.727" />
 
     <Button
         android:id="@+id/nextQButton"
         android:layout_width="313dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="@string/next_question"
         android:textSize="16sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerCheckTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/answerCheckTextView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/answerCheckTextView"
         android:layout_width="313dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/verifying_answer"
         android:textAlignment="center"
         android:textSize="16sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonD" />

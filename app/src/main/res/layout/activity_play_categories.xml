@@ -16,12 +16,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quizNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/questionNumberTextView"
         app:layout_constraintVertical_bias="0.116"
         app:spanCount="2" />
 
     <TextView
-        android:id="@+id/quizNameTextView"
+        android:id="@+id/questionNumberTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="@color/black"

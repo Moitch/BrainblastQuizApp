@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CategoriesGridAdapter(
-    val context: Context,
-    val categories: List<Category>,
-    val itemListener: CategoryItemListener) : RecyclerView.Adapter<CategoriesGridAdapter.CategoryViewHolder>()
+class CategoriesGridAdapter(val context: Context,
+                            val categories: List<Category>,
+                            val itemListener: CategoryItemListener) : RecyclerView.Adapter<CategoriesGridAdapter.CategoryViewHolder>()
 {
     inner class CategoryViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        val categoryTextView = itemView.findViewById<TextView>(R.id.quizNameTextView)
+        val categoryTextView = itemView.findViewById<TextView>(R.id.questionNumberTextView)
     }
 
     override fun getItemCount(): Int {
