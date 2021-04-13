@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "388207022147",
+    "project_id": "brainblast-quiz-app",
+    "storage_bucket": "brainblast-quiz-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388207022147:android:b2b0f5272440a9ec3fc4f6",
+        "android_client_info": {
+          "package_name": "com.example.brainblastquizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388207022147-83t2986p6d665q6ml879gttrijeqnhp3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmNkwWcf9pK5y8rKAEV0Tu393mVD9rHY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "388207022147-83t2986p6d665q6ml879gttrijeqnhp3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
