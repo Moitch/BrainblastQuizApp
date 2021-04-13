@@ -7,7 +7,7 @@
     <string name="logo_for_app">Logo for app</string>
     <string name="profile_redirect">Profile redirect</string>
     <string name="leaderboard_redirect">Leaderboard redirect</string>
-    <string name="question">Question</string>
+    <string name="question">Loading Quiz...</string>
     <string name="_10">10</string>
     <string name="welcome_back">Welcome back %1$s!</string>
     <string name="categories">Categories</string>
@@ -16,4 +16,23 @@
     <string name="display_name">Display name:</string>
     <string name="account_created">Account created:</string>
     <string name="answer">%1$s</string>
+    <string name="quiz_title">Quiz Title</string>
+    <string name="quiz_description">Quiz Description</string>
+    <string name="button">Button</string>
+    <string name="image_for_quiz">image for quiz</string>
+    <string name="view_quiz">View Quiz</string>
+    <string name="title_activity_quiz_list">QuizListActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="total_questions">Total Questions</string>
+    <string name="your_last_score">Your Last Score</string>
+    <string name="not_applicable">N/A</string>
+    <string name="verifying_answer">Verifying Answer</string>
+    <string name="next_question">Next Question</string>
+    <string name="wrong_answers">Wrong Answers</string>
+    <string name="total_score">Total Score</string>
+    <string name="correct_answers">Correct Answers</string>
 </resources>

@@ -28,7 +28,7 @@ class QuizQuestionViewModel : ViewModel(){
     }
 
     private fun loadQuestions(){
-        val db = FirebaseFirestore.getInstance().collection("quizQuestions")
+        val db = FirebaseFirestore.getInstance().collection("quizes/history/quizQuestions")
 
         db.addSnapshotListener{ documents, exception ->
             Log.i("DB_RESPONSE", "# of elements returned ${documents?.size()}")

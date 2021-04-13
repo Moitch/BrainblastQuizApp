@@ -9,6 +9,7 @@ I was having trouble finding it so it would be greatly appreciated.
 package com.example.brainblastquizapp
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,12 +21,8 @@ class QuizQuestionAdapter(val context: Context,
                           val itemListener : QuestionItemListener) : RecyclerView.Adapter<QuizQuestionAdapter.QuestionViewHolder>()
 {
     inner class QuestionViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        val answer1TextView = itemView.findViewById<TextView>(R.id.answerTextView)
-        val answer2TextView = itemView.findViewById<TextView>(R.id.answerTextView)
-        val answer3TextView = itemView.findViewById<TextView>(R.id.answerTextView)
-        val answer4TextView = itemView.findViewById<TextView>(R.id.answerTextView)
-
-
+        val questionTextView: TextView = itemView.findViewById(R.id.questionTextView)
+        val answerTextView: TextView = itemView.findViewById(R.id.answerTextView)
     }
 
     override fun getItemCount(): Int {
@@ -41,10 +38,9 @@ class QuizQuestionAdapter(val context: Context,
     override fun onBindViewHolder(holder: QuestionViewHolder, position: Int) {
         val question = questions[position]
         with (holder){
-            answer1TextView.text = question.A
-            answer2TextView.text = question.B
-            answer3TextView.text = question.C
-            answer4TextView.text = question.D
+            Log.i("Q_INFO", "Question: ${question.question}")
+            questionTextView.text = String.format("%s", question.question)
+            answerTextView.text = String.format("%s", question.A)
         }
 
         holder.itemView.setOnClickListener{

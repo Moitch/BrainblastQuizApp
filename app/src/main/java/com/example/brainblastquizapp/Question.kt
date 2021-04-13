@@ -1,7 +1,7 @@
 package com.example.brainblastquizapp
 
 data class Question(
-    var id: Int?=null,
+        var id: Int?=null,
     var question: String?=null,
     var category: String?=null,
     var A: String?=null,

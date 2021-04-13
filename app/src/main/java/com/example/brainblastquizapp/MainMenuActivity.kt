@@ -22,7 +22,7 @@ class MainMenuActivity : AppCompatActivity() {
         }
 //        Send user to the categories screen
         binding.playButton.setOnClickListener {
-            val intent = Intent(this, PlayCategoriesActivity::class.java)
+            val intent = Intent(this, QuizListActivity::class.java)
             startActivity(intent)
         }
 //        Send user to the profile screen

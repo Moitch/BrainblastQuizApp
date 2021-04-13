@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.example.brainblastquizapp.databinding.ActivityPlayCategoriesBinding
 
 class PlayCategoriesActivity : AppCompatActivity(), CategoriesGridAdapter.CategoryItemListener {
@@ -17,7 +16,7 @@ class PlayCategoriesActivity : AppCompatActivity(), CategoriesGridAdapter.Catego
         setContentView(binding.root)
         // Connects the data to the recycler view.
         val model : CategoryListViewModel by viewModels()
-        model.getCategories().observe(this, Observer<List<Category>> { categories ->
+        model.getCategories().observe(this, { categories ->
             var recyclerAdapter = CategoriesGridAdapter(this, categories, this)
             binding.categoriesRecyclerView.adapter = recyclerAdapter
         })

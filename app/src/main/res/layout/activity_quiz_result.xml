@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    tools:context=".QuizQuestionActivity">
+
+    <TextView
+        android:id="@+id/topLogoTextView4"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="@color/purple_500"
+        android:contentDescription="@string/logo_for_app"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingTop="20dp"
+        android:shadowColor="@color/black"
+        android:text="@string/brainblast"
+        android:textAlignment="center"
+        android:textColor="@color/orange_500"
+        android:textSize="@dimen/logo_font_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="84dp"
+        android:layout_height="81dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/circlebutton"
+        android:text="@string/play"
+        android:textColor="@color/orange_500"
+        android:textStyle="bold"
+        app:backgroundTint="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/profileButton"
+        android:layout_width="92dp"
+        android:layout_height="86dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/purple_500"
+        android:contentDescription="@string/profile_redirect"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:srcCompat="@drawable/header_account_image_line_512" />
+
+    <ImageButton
+        android:id="@+id/leaderboardButton"
+        android:layout_width="92dp"
+        android:layout_height="86dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/purple_500"
+        android:contentDescription="@string/leaderboard_redirect"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:srcCompat="@drawable/leaderboard" />
+
+    <TextView
+        android:id="@+id/resultsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Results"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLogoTextView4" />
+
+    <TableLayout
+        android:id="@+id/resultsTableLayout"
+        android:layout_width="333dp"
+        android:layout_height="317dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="@color/purple_500"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultsTextView"
+        app:layout_constraintVertical_bias="0.834">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="153dp">
+
+            <TextView
+                android:layout_width="213dp"
+                android:layout_height="125dp"
+                android:layout_column="1"
+                android:text="@string/correct_answers"
+                android:textColor="@color/orange_500"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text="@string/not_applicable"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/orange_500"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="153dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:layout_column="1"
+                android:text="@string/wrong_answers"
+                android:textColor="@color/orange_500"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text="@string/not_applicable"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/orange_500"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="153dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text="@string/total_score"
+                android:textColor="@color/orange_500"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text="@string/not_applicable"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/orange_500"
+                android:textSize="24sp" />
+
+        </TableRow>
+    </TableLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circlebutton"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/orange_500"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toTopOf="@+id/resultsTableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultsTextView" />
+
+    <TextView
+        android:id="@+id/percentageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100%"
+        android:textColor="@color/orange_500"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

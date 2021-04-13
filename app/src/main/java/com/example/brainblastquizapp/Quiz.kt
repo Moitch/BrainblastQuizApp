@@ -1,8 +1,12 @@
 package com.example.brainblastquizapp
 
+import com.google.firebase.firestore.DocumentId
+
 data class Quiz (
-    var id: String?=null,
-    var category: String?=null,
-    var answers: String?=null,
-    var question: String?=null
+    @DocumentId
+    var quiz_id: String?=null,
+    var name: String?=null,
+    var questions: Long?=null,
+    var desc: String?=null,
+    var image: String?=null
         )
