@@ -8,7 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MainMenuActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainMenuBinding
+    private lateinit var binding: ActivityMainMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,9 +18,9 @@ class MainMenuActivity : AppCompatActivity() {
         val user = FirebaseAuth.getInstance().currentUser
 //        Ensure the user is not null
         if (user != null) {
-           binding.welcomeMessageTextView.text = getString(R.string.welcome_back, user.displayName)
+            binding.welcomeMessageTextView.text = getString(R.string.welcome_back, user.displayName)
         }
-//        Send user to the categories screen
+//        Send user to the quizList screen
         binding.playButton.setOnClickListener {
             val intent = Intent(this, QuizListActivity::class.java)
             startActivity(intent)

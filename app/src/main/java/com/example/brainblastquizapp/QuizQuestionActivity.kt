@@ -5,22 +5,33 @@ Not working right now.
 package com.example.brainblastquizapp
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.brainblastquizapp.databinding.ActivityQuizQuestionBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 
-class QuizQuestionActivity : AppCompatActivity()
-{
+class QuizQuestionActivity : AppCompatActivity() {
     private var allQuestions: MutableList<Question> = ArrayList()
     private var totalQuestions: Long = 10
     private var chosenQuestions: MutableList<Question> = ArrayList()
     private var currentQuestion: Int = 0
     private var questionActive: Boolean = false
+    private var countDownTimer: CountDownTimer? = null
+
+    private var correctAnswers: Int = 0
+    private var wrongAnswers: Int = 0
+    private var notAnswered: Int = 0
+
+    private val db = FirebaseFirestore.getInstance()
+    private var firebaseAuth: FirebaseAuth? = null
+    private var currentUserID: String? = null
 
     private lateinit var binding: ActivityQuizQuestionBinding
 
@@ -29,10 +40,18 @@ class QuizQuestionActivity : AppCompatActivity()
         binding = ActivityQuizQuestionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val quizID: String = intent.getStringExtra("quizID").toString()
+        val quizID: String = intent.getStringExtra("QUIZ_ID").toString()
         totalQuestions = intent.getLongExtra("totalQuestions", 5)
 
-        val db = FirebaseFirestore.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        //Get User ID
+        if (firebaseAuth!!.currentUser != null) {
+            currentUserID = firebaseAuth!!.currentUser?.uid;
+        } else {
+            //Go Back to Home Page
+        }
+
 
         //Query Firestore Data
         db.collection("QuizList").document(quizID).collection("Questions").get().addOnCompleteListener { task ->
@@ -46,30 +65,81 @@ class QuizQuestionActivity : AppCompatActivity()
         }
 
         binding.buttonA.setOnClickListener {
-            optionSelected(binding.buttonA.text)
+            checkAnswer(binding.buttonA)
         }
 
         binding.buttonB.setOnClickListener {
-            optionSelected(binding.buttonB.text)
+            checkAnswer(binding.buttonB)
         }
 
         binding.buttonC.setOnClickListener {
-            optionSelected(binding.buttonC.text)
+            checkAnswer(binding.buttonC)
         }
 
         binding.buttonD.setOnClickListener {
-            optionSelected(binding.buttonD.text)
+            checkAnswer(binding.buttonD)
+        }
+        binding.nextQButton.setOnClickListener {
+            if (currentQuestion == (totalQuestions.toInt() - 1)) {
+                submitResults()
+            } else {
+                currentQuestion++
+                startQuestion(currentQuestion)
+                resetUI()
+            }
         }
     }
 
-    private fun optionSelected(selectedAnswer: CharSequence?) {
-        if(questionActive){
-            if(chosenQuestions[currentQuestion].answer?.equals(selectedAnswer) == true){
-                Log.i("ANSWER", "Correct answer")
-            } else{
-                Log.i("ANSWER", "Incorrect answer")
-            }
+    private fun submitResults() {
+        val quizID: String = intent.getStringExtra("QUIZ_ID").toString()
+
+        var results: HashMap<String, Any> = HashMap()
+        results["correct"] = correctAnswers
+        results["wrong"] = wrongAnswers
+
+        val db1 = FirebaseFirestore.getInstance().collection("QuizList")
+        db1.document(quizID).collection("Results").document(currentUserID!!).set(results).addOnCompleteListener {
+            val intent = Intent(this, QuizResultActivity::class.java)
+            intent.putExtra("QUIZ_ID", quizID)
+            startActivity(intent)
         }
+    }
+
+    private fun resetUI() {
+        binding.answerCheckTextView.visibility = View.INVISIBLE
+        binding.nextQButton.visibility = View.INVISIBLE
+        binding.nextQButton.isEnabled = false
+    }
+
+    private fun checkAnswer(buttonPressed: Button?) {
+        if (questionActive) {
+            if (chosenQuestions[currentQuestion].answer?.equals(buttonPressed?.text) == true) {
+                Log.i("ANSWER", "Correct answer")
+                correctAnswers++
+
+                binding.answerCheckTextView.text = "Correct Answer"
+                binding.answerCheckTextView.setTextColor(Color.parseColor("#39FF14"));
+            } else {
+                Log.i("ANSWER", "Wrong answer")
+                wrongAnswers++
+
+                binding.answerCheckTextView.text = "Wrong Answer\n Correct Answer : " + chosenQuestions[currentQuestion].answer
+                binding.answerCheckTextView.setTextColor(Color.parseColor("#FF073A"));
+            }
+            // After user select answer disable answering again.
+            questionActive = false
+            countDownTimer?.cancel()
+            showFeedback()
+        }
+    }
+
+    private fun showFeedback() {
+        if (currentQuestion == (totalQuestions.toInt() - 1)) {
+            binding.nextQButton.text = "Finish Quiz"
+        }
+        binding.answerCheckTextView.visibility = View.VISIBLE
+        binding.nextQButton.visibility = View.VISIBLE
+        binding.nextQButton.isEnabled = true
     }
 
     private fun loadQuestion() {
@@ -78,12 +148,12 @@ class QuizQuestionActivity : AppCompatActivity()
         //Configure buttons
         setUpButtons()
 
-        startQuestion(1)
+        startQuestion(0)
     }
 
     private fun startQuestion(questionNum: Int) {
         // Load question
-        binding.questionNumberTextView.text = "Question $questionNum"
+        binding.questionNumberTextView.text = "Question ${questionNum + 1}"
         binding.questionTextView.text = (chosenQuestions[questionNum].question)
 
         // Load answers
@@ -105,17 +175,21 @@ class QuizQuestionActivity : AppCompatActivity()
         binding.timerTextView.text = (timeLeft.toString())
 
 
-        val timer = object: CountDownTimer(timeLeft?.times(1000)!!, 1000) {
+        countDownTimer = object : CountDownTimer(timeLeft?.times(1000)!!, 10) {
             override fun onTick(millisUntilFinished: Long) {
-                binding.timerTextView.text = (millisUntilFinished/1000).toString()
+                binding.timerTextView.text = (millisUntilFinished / 1000).toString()
             }
 
             override fun onFinish() {
                 // When time is finished, prevent user from answering.
                 questionActive = false
+                binding.answerCheckTextView.setTextColor(Color.parseColor("#FF073A"));
+                binding.answerCheckTextView.text = "Time is up! No answer was selected"
+                wrongAnswers++
+                showFeedback()
             }
         }
-        timer.start()
+        (countDownTimer as CountDownTimer).start()
     }
 
     private fun setUpButtons() {
@@ -129,18 +203,13 @@ class QuizQuestionActivity : AppCompatActivity()
         binding.buttonC.visibility = View.VISIBLE
         binding.buttonD.visibility = View.VISIBLE
 
-        binding.buttonA.text = "Mitchell"
-        binding.buttonB.text = "Mitchel"
-        binding.buttonC.text = "Michell"
-        binding.buttonD.text = "Michel"
-
         binding.answerCheckTextView.visibility = View.INVISIBLE
         binding.nextQButton.visibility = View.INVISIBLE
         binding.nextQButton.isEnabled = false
     }
 
     private fun pickQuestions() {
-        for (i in 0 until totalQuestions){
+        for (i in 0 until totalQuestions) {
             val randomNumber: Int = getRandomInt(0, allQuestions.size)
             chosenQuestions.add(allQuestions[randomNumber])
             allQuestions.removeAt(randomNumber)
@@ -152,11 +221,6 @@ class QuizQuestionActivity : AppCompatActivity()
 
     private fun getRandomInt(min: Int, max: Int): Int {
         return (Math.random() * (max - min)).toInt() + min
-    }
-
-    fun questionSelected(question: Question) {
-        val intent = Intent(this, MainMenuActivity::class.java)
-        startActivity(intent)
     }
 
 }

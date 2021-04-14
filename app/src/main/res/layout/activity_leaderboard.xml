@@ -7,19 +7,6 @@
     tools:context=".LeaderboardActivity"
     android:background="@color/purple_200">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/answersRecyclerView"
-        android:layout_width="272dp"
-        android:layout_height="306dp"
-        android:background="@drawable/roundedbutton"
-        android:backgroundTint="@color/purple_500"
-        android:padding="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/playButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topLogoTextView2" />
-
     <TextView
         android:id="@+id/topLogoTextView2"
         android:layout_width="match_parent"
@@ -93,15 +80,84 @@
         app:layout_constraintStart_toStartOf="@+id/view"
         app:srcCompat="@drawable/leaderboard" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Work In Progress."
-        android:textSize="@dimen/category_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/answersRecyclerView"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topLogoTextView2" />
+        app:layout_constraintTop_toBottomOf="@+id/topLogoTextView2"
+        app:srcCompat="@drawable/_5530398" />
+
+    <TableLayout
+        android:id="@+id/hiScoreTableLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="@color/purple_500"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="153dp">
+
+            <TextView
+                android:id="@+id/quiz1TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:layout_column="1"
+                android:text="Quiz 1 Score"
+                android:textColor="@color/orange_500"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/quiz1ScoreTextView"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text="@string/not_applicable"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/orange_500"
+                android:textSize="30sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="153dp">
+
+            <TextView
+                android:id="@+id/quiz2TextView"
+                android:layout_width="227dp"
+                android:layout_height="125dp"
+                android:layout_column="1"
+                android:text="Quiz 2 Score"
+                android:textColor="@color/orange_500"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/quiz2ScoreTextView"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text="@string/not_applicable"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/orange_500"
+                android:textSize="30sp" />
+
+        </TableRow>
+
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

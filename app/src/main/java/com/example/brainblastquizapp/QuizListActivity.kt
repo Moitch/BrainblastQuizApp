@@ -21,6 +21,17 @@ class QuizListActivity : AppCompatActivity(), QuizListAdapter.QuizItemListener {
             var recyclerAdapter = QuizListAdapter(this, quizzes, this)
             binding.quizzesRecyclerView.adapter = recyclerAdapter
         })
+
+        // Send user to the profile screen
+        binding.profileButton.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+        // Send user to the leaderboard screen
+        binding.leaderboardButton.setOnClickListener {
+            val intent = Intent(this, LeaderboardActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun quizSelected(quiz: Quiz) {
