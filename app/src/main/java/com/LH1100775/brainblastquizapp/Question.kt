@@ -1,4 +1,4 @@
-package com.example.brainblastquizapp
+package com.LH1100775.brainblastquizapp
 
 import com.google.firebase.firestore.DocumentId
 

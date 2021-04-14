@@ -2,7 +2,7 @@
 Not working right now.
  */
 
-package com.example.brainblastquizapp
+package com.LH1100775.brainblastquizapp
 
 import android.content.Intent
 import android.graphics.Color
@@ -12,7 +12,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.brainblastquizapp.databinding.ActivityQuizQuestionBinding
+import com.LH1100775.brainblastquizapp.databinding.ActivityQuizQuestionBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 

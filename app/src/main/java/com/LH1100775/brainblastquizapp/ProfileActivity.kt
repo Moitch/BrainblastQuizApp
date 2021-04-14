@@ -1,4 +1,4 @@
-package com.example.brainblastquizapp
+package com.LH1100775.brainblastquizapp
 
 import android.content.Intent
 import android.icu.text.SimpleDateFormat
@@ -6,7 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.example.brainblastquizapp.databinding.ActivityProfileBinding
+import com.LH1100775.brainblastquizapp.databinding.ActivityProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class ProfileActivity : AppCompatActivity() {

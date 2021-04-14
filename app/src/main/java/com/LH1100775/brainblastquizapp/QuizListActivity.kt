@@ -1,10 +1,10 @@
-package com.example.brainblastquizapp
+package com.LH1100775.brainblastquizapp
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.brainblastquizapp.databinding.ActivityQuizListBinding
+import com.LH1100775.brainblastquizapp.databinding.ActivityQuizListBinding
 
 
 class QuizListActivity : AppCompatActivity(), QuizListAdapter.QuizItemListener {

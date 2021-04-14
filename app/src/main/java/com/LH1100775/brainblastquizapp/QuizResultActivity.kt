@@ -1,9 +1,9 @@
-package com.example.brainblastquizapp
+package com.LH1100775.brainblastquizapp
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.brainblastquizapp.databinding.ActivityQuizResultBinding
+import com.LH1100775.brainblastquizapp.databinding.ActivityQuizResultBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore

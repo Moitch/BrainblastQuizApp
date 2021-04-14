@@ -1,9 +1,9 @@
-package com.example.brainblastquizapp
+package com.LH1100775.brainblastquizapp
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.brainblastquizapp.databinding.ActivityMainBinding
+import com.LH1100775.brainblastquizapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,7 +1,7 @@
 /*
 Copy pasted from documentation
  */
-package com.example.brainblastquizapp
+package com.LH1100775.brainblastquizapp
 
 import android.app.Activity
 import android.content.Intent

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.brainblastquizapp">
+    package="com.LH1100775.brainblastquizapp">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BrainblastQuizApp">
-        <activity android:name=".QuizResultActivity" />
-        <activity android:name=".QuizDetailsActivity" />
+        <activity android:name="com.LH1100775.brainblastquizapp.QuizResultActivity" />
+        <activity android:name="com.LH1100775.brainblastquizapp.QuizDetailsActivity" />
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
@@ -21,14 +21,13 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <activity android:name=".QuizListActivity"/>
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".LeaderboardActivity" />
-        <activity android:name=".QuizQuestionActivity" />
-        <activity android:name=".PlayCategoriesActivity" />
-        <activity android:name=".MainMenuActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.LH1100775.brainblastquizapp.QuizListActivity"/>
+        <activity android:name="com.LH1100775.brainblastquizapp.ProfileActivity" />
+        <activity android:name="com.LH1100775.brainblastquizapp.SignInActivity" />
+        <activity android:name="com.LH1100775.brainblastquizapp.LeaderboardActivity" />
+        <activity android:name="com.LH1100775.brainblastquizapp.QuizQuestionActivity" />
+        <activity android:name="com.LH1100775.brainblastquizapp.MainMenuActivity" />
+        <activity android:name="com.LH1100775.brainblastquizapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
